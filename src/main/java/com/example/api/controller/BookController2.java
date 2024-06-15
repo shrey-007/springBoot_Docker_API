@@ -22,7 +22,7 @@ public class BookController2 {
     public ResponseEntity<List<Book>> getBooks(){
         List<Book> list=this.bookService.getAllBooks();
         if(list.size()<=0){
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return  ResponseEntity.ok().body(null);
         }
         else{
             return ResponseEntity.of(Optional.of(list));
