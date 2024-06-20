@@ -16,11 +16,10 @@
   viii) BookController2 uses ResponseEntity to send HttpStatus.  
 
 ### How to run this project on EC2 Instance-:
-1) Create a windows EC2 instance and download git and docker in it.
-2) Pull this repository form GitHub.
-3) Run command "docker build -t tomcatimage ."
-4) Run command "docker-compose up"
-5) Now application is ready, now copy IP address of your EC2 instance and open postman and hit urls "https://ip:8080". If there is no book created initially then it will give error . so first create book then fetch it.
+1) Pull this repository form GitHub.
+2) Run the dockerSetup.sh script to install docker and docker compose
+3) Run command "docker-compose up"
+4) Now application is ready, now copy IP address of your EC2 instance and open postman and hit urls "https://ip:8080". If there is no book created initially then it will give error . so first create book then fetch it.
 
 
 

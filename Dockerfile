@@ -1,14 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
+# Use a base image that includes OpenJDK
 FROM openjdk
 
-# Add a volume pointing to /tmp
-VOLUME /tmp
+# Set the working directory inside the container
+WORKDIR /app
 
-# The application's jar file
-ARG JAR_FILE=target/api-0.0.1-SNAPSHOT.jar
+# Copy the Spring Boot application's JAR file to the container
+COPY your-spring-boot-app.jar /app/app.jar
 
-# Add the application's jar to the container
-ADD ${JAR_FILE} app.jar
+# Expose port 8080 to the outside world
+EXPOSE 8080
 
-# Run the jar file
-ENTRYPOINT ["java","-jar","/app.jar"]
+# Run the Spring Boot application
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
